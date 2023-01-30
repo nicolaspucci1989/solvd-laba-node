@@ -1,5 +1,6 @@
 (Primitive coercion)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_coercion]
 ### Equality `==` vs `===` Comparison Operator
+(See operators)[https://dorey.github.io/JavaScript-Equality-Table/]
 #### Loose Equality
 ![Loose Equality](./img/loose_equality.png)
 #### Strict Equality
