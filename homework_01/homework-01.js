@@ -50,53 +50,41 @@ String.prototype.minus = function (str) {
 String.prototype.divide = function (s) {
 }
 
-String.prototype.multiply = function (str) {
-  let length1 = this.length;
-  let length2 = str.length;
-  if (length1 === 0 || length2 === 0)
-    return "0"
+String.prototype.multiply = function multiply(str) {
+  let s1 = this.split("")
+  let s2 = str.split("")
+  let result = ""
 
-  let result = new Array(length1 + length2).fill(0)
+  s1.reverse()
+  s2.reverse()
 
-  let i_n1 = 0
-  let i_n2 = 0
+  let m = new Array(s1.length + s2.length).fill(0)
 
-  let i
-  for (i = length1 - 1; i > -1; i--) {
-    let carry = 0
-    let n1 = (this[i]).charCodeAt(0) - 48
-
-    i_n2 = 0
-
-    for (let j = length2 - 1; j > -1; j--) {
-      let n2 = (str[j]).charCodeAt(0) - 48
-      let sum = n1 * n2 + result[i_n1 + i_n2] + carry
-      carry = Math.floor(sum / 10)
-      result[i_n1 + i_n2] = sum % 10
-      i_n2 += 1
+  let i, j
+  for (i = 0; i < s1.length; i++) {
+    for (j = 0; j < s2.length; j++) {
+      m[i + j] = m[i + j]
+        + (parseInt(s1[i]) * (parseInt(s2[j])))
     }
-
-    if (carry > 0)
-      result[i_n1 + i_n2] += carry
-
-    i_n1 += 1
   }
 
-  i = result.length - 1
-  while (i >= 0 && result[i] === 0)
-    i -= 1
 
-  if (i === -1)
-    return "0"
-
-  let s = ""
-  while (i >= 0) {
-    s += String.fromCharCode(result[i] + 48)
-    i -= 1
+  for (i = 0; i < m.length; i++) {
+    let digit = m[i] % 10
+    let carry = Math.floor(m[i] / 10)
+    if (i + 1 < m.length) {
+      m[i + 1] = m[i + 1] + carry
+    }
+    result = digit.toString() + result
   }
 
-  return s
+  while (result.length > 1 && result[0] === '0') {
+    result = result.substring(1)
+  }
+
+  return result
 }
+
 // simple test
 console.log('1'.plus('1'))
 console.log('1'.minus('1'))
