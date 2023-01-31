@@ -16,12 +16,38 @@ String.prototype.plus = function (str) {
   return res
 }
 
-String.prototype.minus = function (s) {
-  return (~~this - ~~s).toString()
+String.prototype.minus = function (str) {
+  const reverse = s => s.split("").reverse().join("")
+
+  const str1 = reverse(this)
+  const str2 = reverse(str)
+
+  let result = ""
+  let carry = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    let sub = ~~str1.charAt(i) - ~~str2.charAt(i) - carry
+    if (sub < 0) {
+      sub = sub + 10;
+      carry = 1;
+    } else
+      carry = 0;
+    result += sub + ''
+  }
+
+  for (let i = str.length; i < this.length; i++) {
+    let sub = ~~str1.charAt(i) - carry
+    if (sub < 0) {
+      sub = sub + 10;
+      carry = 1;
+    } else
+      carry = 0;
+    result += sub + ''
+  }
+  return reverse(result)
 }
 
 String.prototype.divide = function (s) {
-  return (~~this / ~~s).toString()
 }
 
 String.prototype.multiply = function (str) {
@@ -41,8 +67,7 @@ String.prototype.multiply = function (str) {
 
   // Go from right to left in this
   let i
-  for (i = len1 - 1; i > -1 ; i --)
-  {
+  for (i = len1 - 1; i > -1; i--) {
     let carry = 0
     let n1 = (this[i]).charCodeAt(0) - 48
 
@@ -51,8 +76,7 @@ String.prototype.multiply = function (str) {
     i_n2 = 0
 
     // Go from right to left in str
-    for (let j = len2 - 1; j > -1; j--)
-    {
+    for (let j = len2 - 1; j > -1; j--) {
       // Take current digit of second number
       let n2 = (str[j]).charCodeAt(0) - 48
 
@@ -92,8 +116,7 @@ String.prototype.multiply = function (str) {
 
   // generate the result string
   let s = ""
-  while (i >= 0)
-  {
+  while (i >= 0) {
     s += String.fromCharCode(result[i] + 48)
     i -= 1
   }
@@ -103,6 +126,6 @@ String.prototype.multiply = function (str) {
 // simple test
 console.log('1'.plus('1'))
 console.log('1'.minus('1'))
-console.log('100'.minus(''))
+console.log('3453452'.minus('4534'))
 console.log('222222222222222222222222222222'.multiply('1111'))
 console.log('2'.divide('2'))
