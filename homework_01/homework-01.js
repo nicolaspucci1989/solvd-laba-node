@@ -1,4 +1,3 @@
-// setup prototype
 String.prototype.plus = function (str) {
   let ind1 = this.length - 1
   let ind2 = str.length - 1
@@ -84,7 +83,7 @@ String.prototype.divide = function (str) {
   return counter
 }
 
-String.prototype.multiply = function multiply(str) {
+String.prototype.multiply = function (str) {
   let s1 = this.split("")
   let s2 = str.split("")
   let result = ""
