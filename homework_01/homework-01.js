@@ -27,6 +27,8 @@ String.prototype.divide = function (s) {
 String.prototype.multiply = function (str) {
   let len1 = this.length;
   let len2 = str.length;
+  if (len1 === 0 || len2 === 0)
+    return "0"
 
   // will keep the result number in vector
   // in reverse order
@@ -38,7 +40,9 @@ String.prototype.multiply = function (str) {
   let i_n2 = 0
 
   // Go from right to left in this
-  for (let i = len1 - 1; i > -1; i--) {
+  let i
+  for (i = len1 - 1; i > -1 ; i --)
+  {
     let carry = 0
     let n1 = (this[i]).charCodeAt(0) - 48
 
@@ -47,20 +51,21 @@ String.prototype.multiply = function (str) {
     i_n2 = 0
 
     // Go from right to left in str
-    for (var j = len2 - 1; j > -1; j--) {
+    for (let j = len2 - 1; j > -1; j--)
+    {
       // Take current digit of second number
       let n2 = (str[j]).charCodeAt(0) - 48
 
       // Multiply with current digit of first number
       // and add result to previously stored result
       // at current position.
-      let summ = n1 * n2 + result[i_n1 + i_n2] + carry
+      let sum = n1 * n2 + result[i_n1 + i_n2] + carry
 
       // Carry for next iteration
-      carry = Math.floor(summ / 10)
+      carry = Math.floor(sum / 10)
 
       // Store result
-      result[i_n1 + i_n2] = summ % 10
+      result[i_n1 + i_n2] = sum % 10
 
       i_n2 += 1
     }
@@ -77,28 +82,27 @@ String.prototype.multiply = function (str) {
   }
   // ignore '0's from the right
   i = result.length - 1
-  while (i >= 0 && result[i] == 0)
+  while (i >= 0 && result[i] === 0)
     i -= 1
 
   // If all were '0's - means either both or
   // one of this or str were '0'
-  if (i == -1)
+  if (i === -1)
     return "0"
 
   // generate the result string
   let s = ""
-  while (i >= 0) {
+  while (i >= 0)
+  {
     s += String.fromCharCode(result[i] + 48)
     i -= 1
   }
 
   return s
 }
-
-
 // simple test
 console.log('1'.plus('1'))
 console.log('1'.minus('1'))
 console.log('100'.minus(''))
-console.log('2'.multiply('2'))
+console.log('222222222222222222222222222222'.multiply('1111'))
 console.log('2'.divide('2'))
