@@ -118,10 +118,3 @@ String.prototype.multiply = function multiply(str) {
 
   return result
 }
-
-// simple test
-console.log('1'.plus('1'))
-console.log('1'.minus('1'))
-console.log('3453452'.minus('4534'))
-console.log('222222222222222222222222222222'.multiply('1111'))
-console.log('160'.divide('2'))
