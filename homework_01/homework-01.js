@@ -44,10 +44,41 @@ String.prototype.minus = function (str) {
       carry = 0;
     result += sub + ''
   }
-  return reverse(result)
+
+  result = reverse(result)
+  while (result.length > 1 && result[0] === '0') {
+    result = result.substring(1)
+  }
+
+  return result
+}
+const greaterOrEqual = (str1, str2) => {
+  if (str1.length > str2.length) return true
+  if (str1.length < str2.length) return false
+
+  for (let i = 0; i < str1.length; i++) {
+    const str1Char = str1.charAt(i)
+    const str2Char = str2.charAt(i)
+
+    if (~~str1Char > ~~str2Char) return true
+    if (~~str1Char < ~~str2Char) return false
+  }
+
+  return true
 }
 
-String.prototype.divide = function (s) {
+String.prototype.divide = function (str) {
+  // return if str1 is bigger than str2
+  let counter = 0
+
+  let res = this.valueOf()
+
+  while (greaterOrEqual(res, str)) {
+    res = res.minus(str)
+    counter++
+  }
+
+  return counter
 }
 
 String.prototype.multiply = function multiply(str) {
@@ -90,4 +121,5 @@ console.log('1'.plus('1'))
 console.log('1'.minus('1'))
 console.log('3453452'.minus('4534'))
 console.log('222222222222222222222222222222'.multiply('1111'))
-console.log('2'.divide('2'))
+console.log('160'.divide('2'))
+console.log(greaterOrEqual('4', '4'))
