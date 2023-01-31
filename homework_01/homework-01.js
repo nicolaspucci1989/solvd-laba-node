@@ -70,7 +70,7 @@ String.prototype.divide = function (str) {
 
     return true
   }
-  // return if str1 is bigger than str2
+
   let counter = 0
 
   let res = this.valueOf()
