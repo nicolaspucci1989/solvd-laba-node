@@ -1,5 +1,6 @@
 function chainSum(initialValue) {
     let accumulator = initialValue
+
     const name = 'Chain sum'
     function innerSum(anotherValue) {
         const name = 'Inner Sum'
@@ -11,7 +12,7 @@ function chainSum(initialValue) {
     }
 
     innerSum.toString = function () {
-        return accumulator
+        return String(accumulator)
     }
 
     innerSum.valueOf = function () {
