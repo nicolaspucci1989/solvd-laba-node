@@ -1,9 +1,7 @@
 function chainSum(initialValue) {
     let accumulator = initialValue
 
-    const name = 'Chain sum'
     function innerSum(anotherValue) {
-        const name = 'Inner Sum'
         if (anotherValue !== undefined) {
             accumulator += anotherValue
             return innerSum
@@ -29,5 +27,8 @@ chainSum.toString = function () {
     return this.apply()
 }
 
-const res = chainSum(28)(-8)(-600)
-console.log(res)
+const n1 = 28
+const n2 = -8
+const n3 = -600
+const res = chainSum(n1)(n2)(n3)
+console.log(res == n1 + n2 + n3)
