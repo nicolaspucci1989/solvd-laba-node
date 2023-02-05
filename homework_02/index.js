@@ -1,5 +1,4 @@
 module.exports = { debounce, chainSum, bubbleSort, quickSort }
-const _ = require('lodash');
 
 function debounce(fn, wait) {
   let timeout
