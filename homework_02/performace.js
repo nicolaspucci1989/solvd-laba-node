@@ -7,16 +7,19 @@ const {
   timerWrap
 } = require('./index')
 
-for (let i = 0; i < 10; i++) {
+const iterations = 20
+const tests = 10
+
+for (let i = 0; i < tests; i++) {
   console.log(`Run ${i + 1}`)
-  console.table(perfTest())
+  console.table(collectPerformanceData(iterations))
 }
 
-function perfTest() {
+function collectPerformanceData(iterations = 10) {
   const data = []
 
 // sorted arrays
-  for (let i = 2; i < 102; i++) {
+  for (let i = 2; i < iterations + 2; i++) {
     const arr = getSequentialArray(i);
     const bTime = timerWrap(bubbleSort)([...arr])
     const qTime = timerWrap(quickSort)([...arr])
@@ -32,7 +35,7 @@ function perfTest() {
   }
 
 // reversed arrays
-  for (let i = 2; i < 102; i++) {
+  for (let i = 2; i < iterations + 2; i++) {
     const arr = getSequentialArrayReversed(i)
     const bTime = timerWrap(bubbleSort)([...arr])
     const qTime = timerWrap(quickSort)([...arr])
@@ -48,7 +51,7 @@ function perfTest() {
   }
 
 // random arrays
-  for (let i = 2; i < 102; i++) {
+  for (let i = 2; i < iterations + 2; i++) {
     const arr = getRandomArray(i)
     const bTime = timerWrap(bubbleSort)([...arr])
     const qTime = timerWrap(quickSort)([...arr])

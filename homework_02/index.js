@@ -92,6 +92,8 @@ function quickSort(arr, start = 0, end = arr.length - 1) {
     quickSort(arr, partitionIndex + 1, end) // right
   }
 
+  return arr
+
   function partition(arr, start, end) {
     const pivot = arr[end]
     let i = start - 1
