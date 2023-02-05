@@ -6,7 +6,7 @@ const data = []
 for (let i = 2; i < 102; i++) {
   const arr = getSequentialArray(i);
   const bTime = timerWrap(bubbleSort)([...arr])
-  const qTime = timerWrap(_quickSort)([...arr])
+  const qTime = timerWrap(quickSort)([...arr])
 
   data.push({
     arrayType: 'Sorted',
@@ -22,10 +22,10 @@ for (let i = 2; i < 102; i++) {
 for (let i = 2; i < 102; i++) {
   const arr = getSequentialArrayReversed(i)
   const bTime = timerWrap(bubbleSort)([...arr])
-  const qTime = timerWrap(_quickSort)([...arr])
+  const qTime = timerWrap(quickSort)([...arr])
 
   data.push({
-    arrayType: 'sorted reversed',
+    arrayType: 'Sorted Reversed',
     arrayLength: i,
     time: {
       bubbleSort: bTime[0] + bTime[1],
@@ -38,10 +38,10 @@ for (let i = 2; i < 102; i++) {
 for (let i = 2; i < 102; i++) {
   const arr = getRandomArray(i)
   const bTime = timerWrap(bubbleSort)([...arr])
-  const qTime = timerWrap(_quickSort)([...arr])
+  const qTime = timerWrap(quickSort)([...arr])
 
   data.push({
-    arrayType: 'random',
+    arrayType: 'Random',
     arrayLength: i,
     time: {
       bubbleSort: bTime[0] + bTime[1],
@@ -129,11 +129,11 @@ function bubbleSort(arr) {
   return local
 }
 
-function _quickSort(arr, start = 0, end = arr.length - 1) {
+function quickSort(arr, start = 0, end = arr.length - 1) {
   if (start < end) {
     const partitionIndex = partition(arr, start, end)
-    _quickSort(arr, start, partitionIndex - 1) // left
-    _quickSort(arr, partitionIndex + 1, end) // right
+    quickSort(arr, start, partitionIndex - 1) // left
+    quickSort(arr, partitionIndex + 1, end) // right
   }
 
   function partition(arr, start, end) {
@@ -156,10 +156,4 @@ function _quickSort(arr, start = 0, end = arr.length - 1) {
 
     return i + 1
   }
-}
-
-function quickSort(arr) {
-  const temp = [...arr]
-  _quickSort(temp, 0, temp.length - 1)
-  return temp
 }
