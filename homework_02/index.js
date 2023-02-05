@@ -1,9 +1,24 @@
 module.exports = { debounce, chainSum, bubbleSort, quickSort }
 
-timerWrap(bubbleSort, 'bubble sort')([3,2,1])
-timerWrap(_quickSort, 'quick sort')([3,2,1])
+for (let i = 2; i < 102; i++) {
+  const arr = getSequentialArray(i);
+  console.log('Times for sorted array of length', arr.length)
+  timerWrap(bubbleSort, 'bubble sort')(arr)
+  timerWrap(_quickSort, 'quick sort')(arr)
+  console.log('============================================')
+}
+
+
+function getSequentialArrayReversed(length) {
+  return getSequentialArray(length).reverse()
+}
+
+function getSequentialArray(length) {
+  return Array.from({ length }, (_, index) => index + 1);
+}
+
 function timerWrap(fn, label) {
-  return function() {
+  return function () {
     console.time(label)
     fn(arguments)
     console.timeEnd(label)
@@ -88,11 +103,11 @@ function _quickSort(arr, start = 0, end = arr.length - 1) {
       }
     }
 
-    const temp = arr[i+1]
-    arr[i+1] = arr[end]
+    const temp = arr[i + 1]
+    arr[i + 1] = arr[end]
     arr[end] = temp
 
-    return i+1
+    return i + 1
   }
 }
 
