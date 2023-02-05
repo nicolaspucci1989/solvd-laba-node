@@ -57,3 +57,7 @@ test('bubble sort', () => {
   const arr = [5,3,7,9,3,2,5,78,90,54,37]
   expect(bubbleSort(arr)).toEqual(arr.sort((a, b) => a - b))
 })
+
+test('quick sort', () => {
+
+})

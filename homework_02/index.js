@@ -57,3 +57,43 @@ function bubbleSort(arr) {
 
   return local
 }
+
+function quickSort(arr, start, end) {
+  if (start < end) {
+    const partitionIndex = partition(arr, start, end)
+    quickSort(arr, start, partitionIndex - 1) // left
+    quickSort(arr, partitionIndex + 1, end) // right
+  }
+
+  function partition(arr, start, end) {
+    const pivot = arr[end]
+    let i = start - 1
+
+    for (let j = start; j < end; j++) {
+      if (arr[j] <= pivot) {
+        i++
+        const temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
+
+      }
+    }
+
+    const temp = arr[i+1]
+    arr[i+1] = arr[end]
+    arr[end] = temp
+
+    return i+1
+  }
+}
+
+function doQS(arr) {
+  const temp = [...arr]
+  quickSort(temp, 0, temp.length - 1)
+  return temp
+}
+
+const arr = [1,2,7,3,7,3];
+console.log(arr)
+console.log(doQS(arr))
+
