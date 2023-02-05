@@ -1,4 +1,4 @@
-module.exports = { debounce, chainSum, bubbleSort }
+module.exports = { debounce, chainSum, bubbleSort, quickSort }
 const _ = require('lodash');
 
 function debounce(fn, wait) {
@@ -92,8 +92,3 @@ function quickSort(arr) {
   _quickSort(temp, 0, temp.length - 1)
   return temp
 }
-
-const arr = [1,2,7,3,7,3];
-console.log(arr)
-console.log(quickSort(arr))
-

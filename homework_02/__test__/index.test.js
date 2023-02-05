@@ -1,6 +1,6 @@
 const sinon = require('sinon')
 const _ = require('lodash');
-const { debounce, chainSum, bubbleSort} = require('../index')
+const { debounce, chainSum, bubbleSort, quickSort } = require('../index')
 
 let clock;
 beforeEach(() => {
@@ -54,10 +54,13 @@ test('chain sum', () => {
 })
 
 test('bubble sort', () => {
-  const arr = [5,3,7,9,3,2,5,78,90,54,37]
+  const arr = Array.from({length: 40}, () => Math.floor(Math.random() * 40));
   expect(bubbleSort(arr)).toEqual(arr.sort((a, b) => a - b))
 })
 
 test('quick sort', () => {
-
+  const arr = Array.from({length: 40}, () => Math.floor(Math.random() * 40));
+  const actual = quickSort([...arr])
+  const expected = [...arr].sort((a, b) => a - b)
+  expect(actual).toStrictEqual(expected)
 })
