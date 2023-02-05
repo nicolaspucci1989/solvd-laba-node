@@ -58,15 +58,15 @@ function bubbleSort(arr) {
   return local
 }
 
-console.log(bubbleSort([3, 2, 1]))
-console.log(bubbleSort([1, 2, 3]))
-console.log(bubbleSort([3, 2, 1, 5, 8, 3, 9, 221, 0]))
-
-const fn = debounce(() => 'done!!', 100)
-console.log(fn());
-console.log(fn());
-console.log(fn());
-console.log(fn());
-setTimeout(() => {
-  console.log(fn())
-}, 500)
+// console.log(bubbleSort([3, 2, 1]))
+// console.log(bubbleSort([1, 2, 3]))
+// console.log(bubbleSort([3, 2, 1, 5, 8, 3, 9, 221, 0]))
+//
+// const fn = debounce(() => 'done!!', 100)
+// console.log(fn());
+// console.log(fn());
+// console.log(fn());
+// console.log(fn());
+// setTimeout(() => {
+//   console.log(fn())
+// }, 500)
