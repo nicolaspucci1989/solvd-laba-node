@@ -70,20 +70,19 @@ function chainSum(initialValue) {
 }
 
 function bubbleSort(arr) {
-  const local = [...arr]
-  const length = local.length
+  const length = arr.length
 
   for (let j = 0; j < length; j++) {
     for (let i = 0; i < length - 1; i++) {
-      if (local[i] > local[i + 1]) {
-        const current = local[i]
-        local[i] = local[i + 1]
-        local[i + 1] = current
+      if (arr[i] > arr[i + 1]) {
+        const current = arr[i]
+        arr[i] = arr[i + 1]
+        arr[i + 1] = current
       }
     }
   }
 
-  return local
+  return arr
 }
 
 function quickSort(arr, start = 0, end = arr.length - 1) {
