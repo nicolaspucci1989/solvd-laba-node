@@ -1,5 +1,15 @@
 module.exports = { debounce, chainSum, bubbleSort, quickSort }
 
+timerWrap(bubbleSort, 'bubble sort')([3,2,1])
+timerWrap(_quickSort, 'quick sort')([3,2,1])
+function timerWrap(fn, label) {
+  return function() {
+    console.time(label)
+    fn(arguments)
+    console.timeEnd(label)
+  }
+}
+
 function debounce(fn, wait) {
   let timeout
   let res
@@ -57,7 +67,7 @@ function bubbleSort(arr) {
   return local
 }
 
-function _quickSort(arr, start, end) {
+function _quickSort(arr, start = 0, end = arr.length - 1) {
   if (start < end) {
     const partitionIndex = partition(arr, start, end)
     _quickSort(arr, start, partitionIndex - 1) // left
