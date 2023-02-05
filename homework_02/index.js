@@ -50,8 +50,8 @@ for (let i = 2; i < 102; i++) {
   })
 }
 
-const found = data.filter(r => r.time.bubbleSort < r.time.quickSort)
-console.log(found)
+const results = data.filter(r => r.time.bubbleSort < r.time.quickSort)
+console.table(results)
 
 function getRandomArray(length) {
   return Array.from({length}, () => Math.floor(Math.random() * length))
