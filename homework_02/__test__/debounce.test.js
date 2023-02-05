@@ -1,6 +1,6 @@
 const sinon = require('sinon')
 const _ = require('lodash');
-const debounce = require('../index')
+const { debounce, chainSum } = require('../index')
 
 let clock;
 beforeEach(() => {
@@ -42,4 +42,13 @@ test('custom debounce', () => {
 
   clock.tick(debounceTime);
   expect(func).toHaveBeenCalledTimes(1);  // func called
+})
+
+test('chain sum', () => {
+  const n1 = 28
+  const n2 = -8
+  const n3 = -600
+  const res = chainSum(n1)(n2)(n3)
+  const expected = n1 + n2 + n3;
+  expect(res == expected).toBeTruthy()
 })
