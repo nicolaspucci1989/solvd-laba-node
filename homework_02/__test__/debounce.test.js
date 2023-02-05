@@ -52,3 +52,8 @@ test('chain sum', () => {
   const expected = n1 + n2 + n3;
   expect(res == expected).toBeTruthy()
 })
+
+// test('bubble sort', () => {
+//   const arr = [1,2,3,4]
+//
+// })
