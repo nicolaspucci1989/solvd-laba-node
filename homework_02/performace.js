@@ -7,14 +7,11 @@ const {
   timerWrap
 } = require('./index')
 
-console.log('Run 1')
-console.table(perfTest())
-console.log('Run 2')
-console.table(perfTest())
-console.log('Run 3')
-console.table(perfTest())
-console.log('Run 4')
-console.table(perfTest())
+for (let i = 0; i < 3; i++) {
+  console.log(`Run ${i + 1}`)
+  console.table(perfTest())
+}
+
 function perfTest() {
   const data = []
 
