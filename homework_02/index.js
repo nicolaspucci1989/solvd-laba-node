@@ -58,11 +58,11 @@ function bubbleSort(arr) {
   return local
 }
 
-function quickSort(arr, start, end) {
+function _quickSort(arr, start, end) {
   if (start < end) {
     const partitionIndex = partition(arr, start, end)
-    quickSort(arr, start, partitionIndex - 1) // left
-    quickSort(arr, partitionIndex + 1, end) // right
+    _quickSort(arr, start, partitionIndex - 1) // left
+    _quickSort(arr, partitionIndex + 1, end) // right
   }
 
   function partition(arr, start, end) {
@@ -87,13 +87,13 @@ function quickSort(arr, start, end) {
   }
 }
 
-function doQS(arr) {
+function quickSort(arr) {
   const temp = [...arr]
-  quickSort(temp, 0, temp.length - 1)
+  _quickSort(temp, 0, temp.length - 1)
   return temp
 }
 
 const arr = [1,2,7,3,7,3];
 console.log(arr)
-console.log(doQS(arr))
+console.log(quickSort(arr))
 
