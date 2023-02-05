@@ -1,14 +1,61 @@
 module.exports = { debounce, chainSum, bubbleSort, quickSort }
 
+const data = []
+
+// sorted arrays
 for (let i = 2; i < 102; i++) {
   const arr = getSequentialArray(i);
-  console.log('Times for sorted array of length', arr.length)
-  timerWrap(bubbleSort, 'bubble sort')(arr)
-  timerWrap(_quickSort, 'quick sort')(arr)
-  console.log('============================================')
+  const bTime = timerWrap(bubbleSort)([...arr])
+  const qTime = timerWrap(_quickSort)([...arr])
+
+  data.push({
+    arrayType: 'Sorted',
+    arrayLength: i,
+    time: {
+      bubbleSort: bTime[0] + bTime[1],
+      quickSort: qTime[0] + qTime[1]
+    },
+  })
 }
 
+// reversed arrays
+for (let i = 2; i < 102; i++) {
+  const arr = getSequentialArrayReversed(i)
+  const bTime = timerWrap(bubbleSort)([...arr])
+  const qTime = timerWrap(_quickSort)([...arr])
 
+  data.push({
+    arrayType: 'sorted reversed',
+    arrayLength: i,
+    time: {
+      bubbleSort: bTime[0] + bTime[1],
+      quickSort: qTime[0] + qTime[1]
+    },
+  })
+}
+
+// random arrays
+for (let i = 2; i < 102; i++) {
+  const arr = getRandomArray(i)
+  const bTime = timerWrap(bubbleSort)([...arr])
+  const qTime = timerWrap(_quickSort)([...arr])
+
+  data.push({
+    arrayType: 'random',
+    arrayLength: i,
+    time: {
+      bubbleSort: bTime[0] + bTime[1],
+      quickSort: qTime[0] + qTime[1]
+    },
+  })
+}
+
+const found = data.filter(r => r.time.bubbleSort < r.time.quickSort)
+console.log(found)
+
+function getRandomArray(length) {
+  return Array.from({length}, () => Math.floor(Math.random() * length))
+}
 function getSequentialArrayReversed(length) {
   return getSequentialArray(length).reverse()
 }
@@ -17,11 +64,11 @@ function getSequentialArray(length) {
   return Array.from({ length }, (_, index) => index + 1);
 }
 
-function timerWrap(fn, label) {
+function timerWrap(fn) {
   return function () {
-    console.time(label)
+    const start = process.hrtime()
     fn(arguments)
-    console.timeEnd(label)
+    return process.hrtime(start)
   }
 }
 

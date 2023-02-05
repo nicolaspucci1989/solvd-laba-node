@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nicolaspucci1989/solvd-laba-node#readme",
   "dependencies": {
+    "csv-writer": "^1.6.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
