@@ -1,19 +1,20 @@
-function debounce(fn, time) {
-    let lastFunctionCall
+module.exports = debounce
+function debounce(func, wait, immediate ) {
+    let timeout
 
-    return function (...args) {
-        if (lastFunctionCall === undefined) { // first call
-            lastFunctionCall = Date.now()
-            return fn(...args)
+    return function() {
+        const context = this
+        const args = arguments;
+        function later() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
         }
 
-        if (Date.now() - lastFunctionCall >= time) { // if time has passed
-            lastFunctionCall = Date.now()
-            return fn(...args)
-        }
-
-        lastFunctionCall = Date.now()
-    }
+        const callNow = immediate && !timeout
+        clearTimeout(timeout)
+        timeout = setTimeout(later, wait)
+        if (callNow) func.apply(context, args)
+    };
 }
 function debounce2(func, wait, immediate) {
     let timeout
