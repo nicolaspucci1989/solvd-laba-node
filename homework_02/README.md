@@ -8,6 +8,7 @@ After **10** iterations, this table shows for which arrays **bubble sort** is fa
  | Random          |      3       | Bubble Sort: **300**, Quick Sort: **354.500** |
  | Random          |      11      | Bubble Sort: **200**, Quick Sort:     **400** |
 ---
+### O-limits  
 For the following Θ-difficulties, write strict and non-strict O-limits and, optionally, strict and non-strict Ω-limits (provided that they exist).
 1. Θ( 1 )
 2. Θ( √n )
