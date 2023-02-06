@@ -7,12 +7,19 @@ After **10** iterations, this table shows for which arrays **bubble sort** is fa
  | Sorted Reversed |      7       | Bubble Sort: **300**, Quick Sort:   **1.100** |
  | Random          |      3       | Bubble Sort: **300**, Quick Sort: **354.500** |
  | Random          |      11      | Bubble Sort: **200**, Quick Sort:     **400** |
+---
+For the following Θ-difficulties, write strict and non-strict O-limits and, optionally, strict and non-strict Ω-limits (provided that they exist).
+1. Θ( 1 )
+2. Θ( √n )
+3. Θ( n )
+4. Θ( n^2 )
+5. Θ( n^3 )  
 
 Given the definitions:
-* Big-O: g(n) >= Θ(n), upper limit. 
-* Little-O: g(n) > Θ(n), strict upper limit.   
-* Big-Ω: g(n) <= Θ(n), lower limit.  
-* Little-Ω: g(n) < Θ(n), strict lower limit.  
+1. Big-O: g(n) >= Θ(n), upper limit. 
+2. Little-O: g(n) > Θ(n), strict upper limit.   
+3. Big-Ω: g(n) <= Θ(n), lower limit.  
+4. Little-Ω: g(n) < Θ(n), strict lower limit.  
 
 For **Θ(1)**, the function f(n) = 1  
 The strict and non-strict O-limits are **O(1)**.  

@@ -8,6 +8,27 @@ module.exports = {
   getRandomArray,
   timerWrap
 }
+function chainSum(initialValue) {
+  let accumulator = initialValue
+
+  function innerSum(anotherValue) {
+    if (anotherValue !== undefined) {
+      accumulator += anotherValue
+      return innerSum
+    }
+    return accumulator
+  }
+
+  innerSum.toString = function () {
+    return String(accumulator)
+  }
+
+  innerSum.valueOf = function () {
+    return accumulator
+  }
+
+  return innerSum
+}
 
 function getRandomArray(length) {
   return Array.from({ length }, () => Math.floor(Math.random() * length))
@@ -45,28 +66,6 @@ function debounce(fn, wait) {
 
     if (res) return res
   };
-}
-
-function chainSum(initialValue) {
-  let accumulator = initialValue
-
-  function innerSum(anotherValue) {
-    if (anotherValue !== undefined) {
-      accumulator += anotherValue
-      return innerSum
-    }
-    return accumulator
-  }
-
-  innerSum.toString = function () {
-    return String(accumulator)
-  }
-
-  innerSum.valueOf = function () {
-    return accumulator
-  }
-
-  return innerSum
 }
 
 function bubbleSort(arr) {
