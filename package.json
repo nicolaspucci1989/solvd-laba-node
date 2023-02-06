@@ -1,0 +1,26 @@
+{
+  "name": "solvd_laba_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolaspucci1989/solvd-laba-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicolaspucci1989/solvd-laba-node/issues"
+  },
+  "homepage": "https://github.com/nicolaspucci1989/solvd-laba-node#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "jest": "^29.4.1",
+    "sinon": "^15.0.1"
+  }
+}
