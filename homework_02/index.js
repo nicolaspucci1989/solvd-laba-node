@@ -30,6 +30,24 @@ function chainSum(initialValue) {
   return innerSum
 }
 
+function debounce(fn, wait) {
+  let timeout
+  let res
+
+  return function () {
+    const context = this
+    const args = arguments;
+
+    clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      timeout = null;
+      res = fn.apply(context, args);
+    }, wait)
+
+    if (res) return res
+  };
+}
+
 function getRandomArray(length) {
   return Array.from({ length }, () => Math.floor(Math.random() * length))
 }
@@ -48,24 +66,6 @@ function timerWrap(fn) {
     fn(arguments)
     return process.hrtime(start)
   }
-}
-
-function debounce(fn, wait) {
-  let timeout
-  let res
-
-  return function () {
-    const context = this
-    const args = arguments;
-
-    clearTimeout(timeout)
-    timeout = setTimeout(() => {
-      timeout = null;
-      res = fn.apply(context, args);
-    }, wait)
-
-    if (res) return res
-  };
 }
 
 function bubbleSort(arr) {
