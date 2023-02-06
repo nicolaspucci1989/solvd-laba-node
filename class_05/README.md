@@ -2,10 +2,13 @@
 ### Metrics
 See [cheatsheet](https://www.bigocheatsheet.com/)
 See [notation](https://cathyatseneca.gitbooks.io/data-structures-and-algorithms/content/analysis/notations.html)
-Big-O describes the upper bound of the algorithm.    
-Little-O describes the upper bound that can not be tight    
+See [video](https://www.youtube.com/watch?v=HcDV5MGGrRE)  
+Big-O describes the upper bound of the algorithm.
+Big-O is greater or equal. **>=**
+Little-O describes the upper bound that can not be tight.
+Little-O is greater. **>**
 Theta describes the average case.  
-Omega describes the lower bound, it's the best case complexity.  
+Omega describes the lower bound, it's the best case complexity.      
 
 ### Find biggest element in array
 ```javascript
