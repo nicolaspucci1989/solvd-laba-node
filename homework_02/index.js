@@ -86,14 +86,27 @@ function bubbleSort(arr) {
 
 function quickSort(arr, start = 0, end = arr.length - 1) {
   if (start < end) {
-    const partitionIndex = partition(arr, start, end)
+    const partitionIndex = randomPartition(arr, start, end)
     quickSort(arr, start, partitionIndex - 1) // left
     quickSort(arr, partitionIndex + 1, end) // right
   }
 
   return arr
 
+  function swap(arr, i, j) {
+    const t = arr[i]
+    arr[i] = arr[j]
+    arr[j] = t
+  }
+  function randomPartition(arr, start, end) {
+    const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+    const rand = random(start, end)
+    swap(arr, rand, end)
+    return partition(arr, start, end)
+  }
+
   function partition(arr, start, end) {
+    // const pivot = arr[random(start, end)]
     const pivot = arr[end]
     let i = start - 1
 
@@ -113,4 +126,19 @@ function quickSort(arr, start = 0, end = arr.length - 1) {
 
     return i + 1
   }
+}
+
+function getFiboCache() {
+  const cache = new Map()
+
+  function fibo(n) {
+    if (cache.has(n)) return cache.get(n)
+    if (n === 0) return 0
+    if (n === 1) return 1
+    const res = fibo(n - 1) + fibo(n - 2);
+    cache.set(n, res)
+    return res
+  }
+
+  return fibo
 }
