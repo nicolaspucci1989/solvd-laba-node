@@ -129,7 +129,7 @@ function getFiboCache() {
     function fibo(n) {
         if (cache.has(n)) return cache.get(n)
         if (n === 1 || n === 0) return n
-        const res = fibo(n - 1) + fibo(n - 2);
+        const res = fibo(n - 1) + fibo(n - 2)
         cache.set(n, res)
         return res
     }
