@@ -131,14 +131,31 @@ function quickSort(arr, start = 0, end = arr.length - 1) {
 function getFiboCache() {
   const cache = new Map()
 
-  function fibo(n) {
-    if (cache.has(n)) return cache.get(n)
-    if (n === 0) return 0
-    if (n === 1) return 1
-    const res = fibo(n - 1) + fibo(n - 2);
-    cache.set(n, res)
-    return res
-  }
+    function fibo(n) {
+        if (cache.has(n)) return cache.get(n)
+        if (n <= 1) return n
+        const res = fibo(n - 1) + fibo(n - 2);
+        cache.set(n, res)
+        return res
+    }
 
-  return fibo
+    return fibo
+}
+
+function getFiboCacheWeak() {
+    const cache = new WeakMap()
+
+    /**
+     * @param{number} n
+     * @return{number}
+     */
+    function fibo(n) {
+        if (cache.has(n)) return cache.get(n)
+        if (n <= 1) return n
+        const res = fibo(n - 1) + fibo(n - 2);
+        cache.set(n, res)
+        return res
+    }
+
+    return fibo
 }
