@@ -7,7 +7,7 @@ const {
   timerWrap
 } = require('./index')
 
-const iterations = 20
+const iterations = 40
 const tests = 10
 
 for (let i = 0; i < tests; i++) {

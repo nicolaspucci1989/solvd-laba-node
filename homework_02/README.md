@@ -1,12 +1,70 @@
 ### Results
-After **10** iterations, this table shows for which arrays **bubble sort** is faster than **quick sort**
+After **40** iterations, this table shows for which arrays **bubble sort** is faster than **quick sort**
 
-| Array Type      | Array Length | time (milliseconds)                           |
-|:----------------|:------------:|:----------------------------------------------|
- | Sorted          |      11      | Bubble Sort: **200**, Quick Sort:   **1.500** |
- | Sorted Reversed |      7       | Bubble Sort: **300**, Quick Sort:   **1.100** |
- | Random          |      3       | Bubble Sort: **300**, Quick Sort: **354.500** |
- | Random          |      11      | Bubble Sort: **200**, Quick Sort:     **400** |
+| Array Type        | Array Length | Time (milliseconds)               |
+|-------------------|--------------|-----------------------------------|
+| 'Sorted'          | 2            | bubbleSort: 1500, quickSort: 1900 |
+| 'Sorted'          | 4            | bubbleSort: 200, quickSort: 300   |
+| 'Sorted'          | 6            | bubbleSort: 200, quickSort: 300   |
+| 'Sorted'          | 7            | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 9            | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 11           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 14           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 15           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 16           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 17           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 18           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 19           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 20           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 21           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 22           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 23           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 24           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 25           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 28           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 29           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 31           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 33           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 34           | bubbleSort: 100, quickSort: 300   |
+| 'Sorted'          | 35           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 36           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted'          | 40           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 2            | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 6            | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 8            | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 9            | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 10           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 15           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 19           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 20           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 23           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 28           | bubbleSort: 200, quickSort: 300   |
+| 'Sorted Reversed' | 29           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 30           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 32           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 34           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 37           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 38           | bubbleSort: 100, quickSort: 200   |
+| 'Sorted Reversed' | 39           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 2            | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 4            | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 5            | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 8            | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 10           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 13           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 16           | bubbleSort: 100, quickSort: 300   |
+| 'Random'          | 20           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 21           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 23           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 25           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 30           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 31           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 33           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 36           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 37           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 40           | bubbleSort: 100, quickSort: 200   |
+| 'Random'          | 41           | bubbleSort: 100, quickSort: 200   |
+
 ---
 ### O-limits  
 For the following Θ-difficulties, write strict and non-strict O-limits and, optionally, strict and non-strict Ω-limits (provided that they exist).
