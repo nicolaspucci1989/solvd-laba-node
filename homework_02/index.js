@@ -122,6 +122,10 @@ function quickSort(arr, start = 0, end = arr.length - 1) {
         return i + 1
     }
 }
+const fiboCache = getFiboCacheWeak();
+console.log(process.memoryUsage());
+const res = fiboCache(8);
+console.log(process.memoryUsage());
 
 function getFiboCache() {
     const cache = new Map()

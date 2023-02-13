@@ -1,4 +1,5 @@
 ### Results
+
 After **40** iterations, this table shows for which arrays **bubble sort** is faster than **quick sort**
 
 | Array Type        | Array Length | Time (milliseconds)               |
@@ -66,44 +67,59 @@ After **40** iterations, this table shows for which arrays **bubble sort** is fa
 | 'Random'          | 41           | bubbleSort: 100, quickSort: 200   |
 
 ---
-### O-limits  
-For the following Θ-difficulties, write strict and non-strict O-limits and, optionally, strict and non-strict Ω-limits (provided that they exist).
+
+### O-limits
+
+For the following Θ-difficulties, write strict and non-strict O-limits and, optionally, strict and non-strict Ω-limits (
+provided that they exist).
+
 1. Θ( 1 )
 2. Θ( √n )
 3. Θ( n )
 4. Θ( n^2 )
-5. Θ( n^3 )  
+5. Θ( n^3 )
 
 Given the definitions:
-1. Big-O: g(n) >= Θ(n), upper limit. 
-2. Little-O: g(n) > Θ(n), strict upper limit.   
-3. Big-Ω: g(n) <= Θ(n), lower limit.  
-4. Little-Ω: g(n) < Θ(n), strict lower limit.  
+
+1. Big-O: g(n) >= Θ(n), upper limit.
+2. Little-O: g(n) > Θ(n), strict upper limit.
+3. Big-Ω: g(n) <= Θ(n), lower limit.
+4. Little-Ω: g(n) < Θ(n), strict lower limit.
 
 For **Θ(1)**, the function f(n) = 1  
 The strict and non-strict O-limits are **O(1)**.  
-The strict and non-strict Ω-limits are **Ω(1)**.  
+The strict and non-strict Ω-limits are **Ω(1)**.
 
 For **Θ(√n)**, the function f(n) = √n,  
 The strict O-limit is **c * √n** => **O(√n)**.   
 The non-strict O-limit is **O(n)**, (√n <= n for all n).    
 The strict Ω-limit is **Ω(√n)**.  
-The non-strict Ω-limit is **Ω(1)**, (√n >= 1 for all n).  
+The non-strict Ω-limit is **Ω(1)**, (√n >= 1 for all n).
 
 For **Θ(n)**, the function f(n) = n.   
 The strict O-limit is **O(n)**.  
 The non-strict O-limit is **O(n^2)**, (n <= n^2 for all n)   
 The strict Ω-limit is **Ω(n)**.  
-The non-strict Ω-limit is **Ω(1)** (n >= 1 for all n)   
+The non-strict Ω-limit is **Ω(1)** (n >= 1 for all n)
 
 For **Θ(n^2)**, the function f(n) = n^2.    
 The strict O-limit is **O(n^2)**.  
 The non-strict O-limit is **O(n^3)** (n^2 <= n^3 for all n).  
 The strict Ω-limit is **Ω(n^2)**.  
-The non-strict Ω-limit is **Ω(n)**, (n^2 >= n for all n).  
+The non-strict Ω-limit is **Ω(n)**, (n^2 >= n for all n).
 
 For **Θ(n^3)**, the function f(n) = n^3,   
 The strict O-limit is **O(n^3)**.  
 The non-strict O-limit **O(n^4)** (n^3 <= n^4 for all n).  
 The strict Ω-limit is **Ω(n^3)**.  
-The non-strict Ω-limit is **Ω(n^2)**. (n^3 >= n^ for all n).  
+The non-strict Ω-limit is **Ω(n^2)**. (n^3 >= n^ for all n).
+
+# Fibonacci with map cache
+
+| Weak Map      | before     | after      | Map           | before     | after      |
+|---------------|------------|------------|---------------|------------|------------|
+| rss           | 27.971.584 | 28.450.816 | rss           | 27.930.624 | 28.450.816 |
+| heap total    | 5.287.936  | 5.820.416  | heap total    | 5.287.936  | 5.820.416  |
+| heap used     | 4.510.072  | 5.084.680  | heap used     | 4.510.112  | 5.078.584  |
+| external      | 332.356    | 344.346    | external      | 332.356    | 344.346    |
+| array buffers | 11.218     | 11.218     | array buffers | 11.218     | 11.218     |
