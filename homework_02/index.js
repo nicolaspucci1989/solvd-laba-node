@@ -150,14 +150,13 @@ function getFiboCacheWeak() {
   function fibo(o) {
     if (cache.has(o)) return cache.get(o)
     if (o.n === 1 || o.n === 0) return { n: o.n }
-    const res = fibo({n: o.n - 1}).n + fibo({ n: o.n - 2 }).n;
+    const res = fibo({ n: o.n - 1 }).n + fibo({ n: o.n - 2 }).n
     cache.set(o, res)
-    return res
+    return {n: res}
   }
 
   return fibo
 }
-
 
 function cw() {
   function fibo(n) {
@@ -177,7 +176,3 @@ function cw() {
     return computed;
   }
 }
-const fc = cw()
-const arg = {n: 8}
-console.log(fc(arg));
-console.log(fc(arg));
