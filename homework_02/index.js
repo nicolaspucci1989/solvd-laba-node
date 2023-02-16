@@ -157,22 +157,3 @@ function getFiboCacheWeak() {
 
   return fibo
 }
-
-function cw() {
-  function fibo(n) {
-    if(n === 1 || n === 0) return n
-    return fibo(n - 1) + fibo(n - 2)
-  }
-
-  const cache = new WeakMap();
-
-  return (arg) => {
-    if (cache.has(arg)) {
-      console.log('cache hit')
-      return cache.get(arg);
-    }
-    const computed = fibo(arg.n);
-    cache.set(arg, computed);
-    return computed;
-  }
-}
