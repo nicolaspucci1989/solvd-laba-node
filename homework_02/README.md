@@ -114,12 +114,12 @@ The non-strict O-limit **O(n^4)** (n^3 <= n^4 for all n).
 The strict Ω-limit is **Ω(n^3)**.  
 The non-strict Ω-limit is **Ω(n^2)**. (n^3 >= n^ for all n).
 
-# Fibonacci with map cache
+# Fibonacci series with map/weak map cache
 
 | Weak Map      | before     | after      | Map           | before     | after      |
 |---------------|------------|------------|---------------|------------|------------|
 | rss           | 27.971.584 | 28.450.816 | rss           | 27.930.624 | 28.450.816 |
 | heap total    | 5.287.936  | 5.820.416  | heap total    | 5.287.936  | 5.820.416  |
 | heap used     | 4.510.072  | 5.084.680  | heap used     | 4.510.112  | 5.078.584  |
-| external      | 332.356    | 344.346    | external      | 332.356    | 344.346    |
-| array buffers | 11.218     | 11.218     | array buffers | 11.218     | 11.218     |
+| external      | 332.356    | same       | external      | 332.356    | same       |
+| array buffers | 11.218     | same       | array buffers | 11.218     | same       |
