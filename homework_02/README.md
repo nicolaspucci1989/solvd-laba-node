@@ -2,69 +2,60 @@
 
 After **40** iterations, this table shows for which arrays **bubble sort** is faster than **quick sort**
 
-| Array Type        | Array Length | Time (milliseconds)               |
-|-------------------|--------------|-----------------------------------|
-| 'Sorted'          | 2            | bubbleSort: 1500, quickSort: 1900 |
-| 'Sorted'          | 4            | bubbleSort: 200, quickSort: 300   |
-| 'Sorted'          | 6            | bubbleSort: 200, quickSort: 300   |
-| 'Sorted'          | 7            | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 9            | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 11           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 14           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 15           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 16           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 17           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 18           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 19           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 20           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 21           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 22           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 23           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 24           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 25           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 28           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 29           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 31           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 33           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 34           | bubbleSort: 100, quickSort: 300   |
-| 'Sorted'          | 35           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 36           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted'          | 40           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 2            | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 6            | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 8            | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 9            | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 10           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 15           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 19           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 20           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 23           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 28           | bubbleSort: 200, quickSort: 300   |
-| 'Sorted Reversed' | 29           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 30           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 32           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 34           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 37           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 38           | bubbleSort: 100, quickSort: 200   |
-| 'Sorted Reversed' | 39           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 2            | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 4            | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 5            | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 8            | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 10           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 13           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 16           | bubbleSort: 100, quickSort: 300   |
-| 'Random'          | 20           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 21           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 23           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 25           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 30           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 31           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 33           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 36           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 37           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 40           | bubbleSort: 100, quickSort: 200   |
-| 'Random'          | 41           | bubbleSort: 100, quickSort: 200   |
+| Array type        | Array Length (max 102) | Time (milliseconds)             |
+|-------------------|------------------------|---------------------------------|
+| 'Sorted'          | 4                      | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 10                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 14                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 17                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 30                     | bubbleSort: 100, quickSort: 200 |
+| 'Sorted'          | 32                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 34                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 39                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 40                     | bubbleSort: 100, quickSort: 200 |
+| 'Sorted'          | 44                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 53                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 56                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 62                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 67                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 70                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 73                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 88                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 89                     | bubbleSort: 100, quickSort: 200 |
+| 'Sorted'          | 96                     | bubbleSort: 100, quickSort: 200 |
+| 'Sorted'          | 98                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted'          | 99                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted Reversed' | 2                      | bubbleSort: 100, quickSort: 200 |
+| 'Sorted Reversed' | 5                      | bubbleSort: 0, quickSort: 100   |
+| 'Sorted Reversed' | 10                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted Reversed' | 39                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted Reversed' | 41                     | bubbleSort: 100, quickSort: 200 |
+| 'Sorted Reversed' | 49                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted Reversed' | 51                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted Reversed' | 52                     | bubbleSort: 100, quickSort: 200 |
+| 'Sorted Reversed' | 53                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted Reversed' | 58                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted Reversed' | 75                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted Reversed' | 83                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted Reversed' | 86                     | bubbleSort: 0, quickSort: 100   |
+| 'Sorted Reversed' | 95                     | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 4                      | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 8                      | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 12                     | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 17                     | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 24                     | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 26                     | bubbleSort: 100, quickSort: 200 |
+| 'Random'          | 40                     | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 48                     | bubbleSort: 0, quickSort: 200   |
+| 'Random'          | 59                     | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 67                     | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 78                     | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 79                     | bubbleSort: 100, quickSort: 200 |
+| 'Random'          | 80                     | bubbleSort: 0, quickSort: 200   |
+| 'Random'          | 82                     | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 93                     | bubbleSort: 0, quickSort: 100   |
+| 'Random'          | 95                     | bubbleSort: 0, quickSort: 100   |
+
 
 ---
 

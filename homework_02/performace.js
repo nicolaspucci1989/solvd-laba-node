@@ -7,12 +7,12 @@ const {
   timerWrap
 } = require('./index')
 
-const iterations = 40
-const tests = 10
+const arrayMaxLength = 100
+const tests = 40
 
 for (let i = 0; i < tests; i++) {
   console.log(`Run ${i + 1}`)
-  console.table(collectPerformanceData(iterations))
+  console.table(collectPerformanceData(arrayMaxLength))
 }
 
 function collectPerformanceData(iterations = 10) {
