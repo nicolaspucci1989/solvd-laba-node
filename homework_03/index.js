@@ -4,10 +4,11 @@ class EventEmitter {
         this.listeners = {}
     }
 
-    emit(eventName, ...args) {
-        this.getListeners(eventName).forEach(listener => {
-            listener(...args)
-        })
+    async emit(eventName, ...args) {
+        const listeners = this.getListeners(eventName)
+        for (let i = 0; i < listeners.length; i++) {
+            await listeners[i](...args)
+        }
     }
 
     on(eventName, listener) {

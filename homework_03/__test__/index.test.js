@@ -48,19 +48,31 @@ describe('Event listener', () => {
 
     })
 
-    it('should call each of the listeners registered for the event name', () => {
+    it('should call each of the listeners registered for the event name', async () => {
         const eventName = 'event';
         const firstListener = jest.fn()
         const secondListener = jest.fn()
         const thirdListener = jest.fn()
         eventEmitter.on(eventName, firstListener)
-        eventEmitter.on(eventName, secondListener)
+        eventEmitter.on(eventName, (...args) => Promise.resolve().then(() => secondListener(...args)))
         eventEmitter.on(eventName, thirdListener)
 
-        eventEmitter.emit(eventName, 'first argument', 'second argument')
+        await eventEmitter.emit(eventName, 'first argument', 'second argument')
 
         expect(firstListener).toBeCalledWith('first argument', 'second argument')
         expect(secondListener).toBeCalledWith('first argument', 'second argument')
         expect(thirdListener).toBeCalledWith('first argument', 'second argument')
+    })
+
+    it('should call each of the listeners registered for the event name', async () => {
+        const eventName = 'event';
+        const firstListener =() => console.log('first')
+        const secondListener = () => console.log('second')
+        const thirdListener = () => console.log('third')
+        eventEmitter.on(eventName, firstListener)
+        eventEmitter.on(eventName, (...args) => Promise.resolve().then(() => secondListener(...args)))
+        eventEmitter.on(eventName, thirdListener)
+
+        await eventEmitter.emit(eventName, 'first argument', 'second argument')
     })
 })
