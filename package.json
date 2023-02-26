@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "jest": "^29.4.1",
+    "prettier": "2.8.4",
     "sinon": "^15.0.1"
   }
 }
