@@ -51,13 +51,16 @@ class LinkedList {
         prev.next = current.next
     }
 
-    find(value) {
+    /**
+     * cb{Function} - callback function
+     */
+    find(cb) {
         let current = this.head
-        while (current.value !== value) {
+        while (!cb(current)) {
             current = current.next
         }
         return current
     }
 }
 
-module.exports = LinkedList
+module.exports = {LinkedList, Node}
