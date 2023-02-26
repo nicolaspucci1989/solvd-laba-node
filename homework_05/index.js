@@ -28,12 +28,26 @@ class LinkedList {
     }
 
     remove(value) {
+        if (this.head.data === value) {
+            this.head = this.head.next
+            return
+        }
+
         let current = this.head
         let prev = this.head
-        while (current.value !== value) {
+
+        while (current.data !== value) {
             prev = current
             current = current.next
         }
+
+        if (current === this.last) {
+            prev.next = null
+            this.last = prev
+            return
+        }
+
+        // unlink current node with target value
         prev.next = current.next
     }
 
