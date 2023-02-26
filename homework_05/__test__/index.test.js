@@ -51,4 +51,15 @@ describe("Given a linked list", () => {
     expect(found instanceof Node).toBeTruthy();
     expect(found.data).toBe(30);
   });
+
+  it("should detect if a linked list doesnt have a loop", () => {
+    linkedList.add(10).add(20).add(30);
+    expect(linkedList.hasLoop()).toBeFalsy();
+  });
+
+  it("should detect if a linked list has a loop", () => {
+    linkedList.add(10).add(20).add(30);
+    linkedList.last.next = linkedList.head;
+    expect(linkedList.hasLoop()).toBeTruthy();
+  });
 });
