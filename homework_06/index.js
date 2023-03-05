@@ -21,3 +21,7 @@ Promise.all = function (promises) {
     });
   });
 };
+
+Promise.all([1, 2, 3]).then((val) => {
+  console.log(val);
+});
